@@ -1,2 +1,3 @@
-# pd-abstraction-library
+# cdm-pdlib
+
 A collection of humble Pure data abstractions.
