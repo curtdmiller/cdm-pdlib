@@ -1,0 +1,44 @@
+#N canvas 845 296 508 499 10;
+#X text 22 16 SEQER - a sequencer;
+#X text 22 72 continuous mode:;
+#X obj 24 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 24 138 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 24 114 seqer 120 1 c 4 0 1 2 3;
+#X obj 159 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 261 138 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 396 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 259 72 single mode:;
+#X obj 261 114 seqer 120 1 s 4 0 1 2 3;
+#X obj 351 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 396 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 69 90 5 0 0 0 - - -;
+#X floatatom 306 89 5 0 0 0 - - -;
+#X text 23 306 inlets:;
+#X text 22 230 arguments:;
+#X text 98 229 0: tempo \; 1: subdivision (i.e. 4 = quarter notes)
+\; 2: mode: c = continuous \, s = single measure \; 3: number of beats
+in cycle (max 16) \; 4-20: number to output for each beat \, respectively
+;
+#X text 24 389 outlets:;
+#X text 98 309 0: continuous mode trigger (0 off/1 on) \; 1: tempo
+\; 2: single mode trigger once if no current series (bang) \; 3: single
+mode trigger once or wait until end of current cycle and trigger in
+time (bang);
+#X text 99 392 0: sequenced values \; 1: bang one beat after final
+value output \;;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 9 0 6 0;
+#X connect 9 1 7 0;
+#X connect 10 0 9 2;
+#X connect 11 0 9 3;
+#X connect 12 0 4 1;
+#X connect 13 0 9 1;
